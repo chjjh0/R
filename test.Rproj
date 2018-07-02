@@ -1,0 +1,16 @@
+help("solve")
+1:10
+c(1:10)
+?solve
+a = 3
+a 
+c(1)
+b <- 4
+b
+c <- a+b
+c
+a <- c(1, "2", 3, "4")
+a
+x <- c(1:10)
+sum(x)
+?seq
