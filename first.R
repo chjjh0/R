@@ -127,7 +127,7 @@ repeat{
 ##ver2
 num <- c(1:5)
 for(v in num){
-  ifelse(v==5){
+  if(v==5){
     cat(num[v], "=", sum(num))
     break
   } else {
@@ -144,6 +144,7 @@ for(e in 1:100){
     )
 }
 ##이름, 국/영/수, 이름/총점/평균/등급
+##ver1
 myGrade3 <- function(){
   subject <- c("국어", "영어", "수학")
   i <- 1
@@ -161,5 +162,28 @@ myGrade3 <- function(){
   cat("이름: ", name, "총점: ", total, "평균: ", avg, "등급: ", grade)
 }
 myGrade3()
+##ver2
+myGrade4 <- function(){
+  subject <- c("국어", "영어", "수학")
+  i <- 1
+  print("이름을 입력하세요")
+  name <- as.character(readline())
+  score <- c(0,0,0)
+  for(i in 1:3){
+    cat(subject[i], "점수를 입력하세요")
+    score[i] <- c(as.integer(readline()))
+  }
+  cat("이름: ", name, "총점: ", sum(score), "평균: ", round(sum(score)/3,2), "등급: ", 
+      switch(
+        toString(round(mean(sum(score)/10))),
+        "10" = "a",
+        "9" = "a",
+        "8" = "b",
+        "7" = "c",
+        "6" = "d",
+        "e"))
+}
+result <- myGrade4()
 
+mean(c(90, 90, 50))
 
